@@ -1,0 +1,12 @@
+# Compilacion de Visual Studio
+bin/
+obj/
+.vs/
+*.user
+
+# Instaladores: se publican en GitHub Releases, no en el codigo
+INSTALADOR/
+*.msi
+
+# Cache de Advanced Installer
+*-cache/

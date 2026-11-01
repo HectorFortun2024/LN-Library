@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+    <!-- Windows Forms de .NET (no hace falta enlazar los .dll del antiguo .NET Framework ni repartirlos) -->
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <!-- Al compilar en Debug se compila también Release, que es lo que empaqueta el instalador:
+       así bin\Release nunca se queda con un programa viejo. -->
+  <Target Name="CompilarTambienRelease" AfterTargets="Build"
+          Condition="'$(Configuration)' == 'Debug' And '$(DesignTimeBuild)' != 'true'">
+    <MSBuild Projects="$(MSBuildProjectFullPath)" Properties="Configuration=Release" Targets="Build" />
+  </Target>
+</Project>

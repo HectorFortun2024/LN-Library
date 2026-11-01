@@ -1,0 +1,44 @@
+using LN;
+namespace ProgramaDePruebaDeLN
+    {
+    public partial class Form1 : Form
+        {
+        StreamReader ENTRADA;
+        LN.LN OBJ = new LN.LN();
+        public Form1()
+            {
+            InitializeComponent();
+            }
+
+        private void button1_Click(object sender, EventArgs e)
+            {
+
+            string Articulo = "";
+            StreamReader sr = new StreamReader(@"D:\VIN.txt");
+            // Leer cada línea del archivo
+            while ((Articulo = sr.ReadLine()) != null)
+                {
+                // Procesar la línea (por ejemplo, mostrar el contenido)
+                OBJ.MensINFO("Articulo = " + Articulo);
+                }
+
+            //ENTRADA = OBJ.FileDiskOpenRead(@"D\VIN.txt");
+            // Usar StreamReader para leer el archivo
+            //using (StreamReader sr = new StreamReader(@"D\VIN.txt"))
+            //    {
+
+                //}
+            //Articulo = OBJ.FileDiskRead(ENTRADA);
+            //OBJ.MensINFO("Articulo = " + Articulo);
+            //Articulo = OBJ.FileDiskRead(ENTRADA);
+            //OBJ.MensINFO("Articulo = " + Articulo);
+            //Articulo = OBJ.FileDiskRead(ENTRADA);
+            //OBJ.MensINFO("Articulo = " + Articulo);
+            //Articulo = OBJ.FileDiskRead(ENTRADA);
+            //OBJ.MensINFO("Articulo = " + Articulo);
+            OBJ.MensINFO("Mensaje de Prueba");
+            OBJ.MSDOSWait("D:\\AAA.docx");
+
+            }
+        }
+    }
